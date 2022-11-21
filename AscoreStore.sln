@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{528F9D76-C463-4056-8705-5A16D94FE235}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AscoreStore.Catalog.Application", "src\AscoreStore.Catalog.Application\AscoreStore.Catalog.Application.csproj", "{B47A392B-8DC0-4890-8461-AACDB70C6B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AscoreStore.Catalog.Data", "src\AscoreStore.Catalog.Data\AscoreStore.Catalog.Data.csproj", "{917E48D4-DEE4-4118-A240-692E2459F128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AscoreStore.Catalog.Domain", "src\AscoreStore.Catalog.Domain\AscoreStore.Catalog.Domain.csproj", "{01ECDA88-7181-4EDE-A037-BCBC1BE3A697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AscoreStore.Core", "src\AscoreStore.Core\AscoreStore.Core.csproj", "{65DEDCC8-A5B5-472E-A1B6-063C898E4FC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AscoreStore.WebApp", "src\AscoreStore.WebApp\AscoreStore.WebApp.csproj", "{7BB98641-DFF7-4D43-B937-4C8557314534}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B47A392B-8DC0-4890-8461-AACDB70C6B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47A392B-8DC0-4890-8461-AACDB70C6B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B47A392B-8DC0-4890-8461-AACDB70C6B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B47A392B-8DC0-4890-8461-AACDB70C6B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917E48D4-DEE4-4118-A240-692E2459F128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917E48D4-DEE4-4118-A240-692E2459F128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917E48D4-DEE4-4118-A240-692E2459F128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917E48D4-DEE4-4118-A240-692E2459F128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01ECDA88-7181-4EDE-A037-BCBC1BE3A697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01ECDA88-7181-4EDE-A037-BCBC1BE3A697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01ECDA88-7181-4EDE-A037-BCBC1BE3A697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01ECDA88-7181-4EDE-A037-BCBC1BE3A697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65DEDCC8-A5B5-472E-A1B6-063C898E4FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65DEDCC8-A5B5-472E-A1B6-063C898E4FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65DEDCC8-A5B5-472E-A1B6-063C898E4FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65DEDCC8-A5B5-472E-A1B6-063C898E4FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB98641-DFF7-4D43-B937-4C8557314534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB98641-DFF7-4D43-B937-4C8557314534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB98641-DFF7-4D43-B937-4C8557314534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB98641-DFF7-4D43-B937-4C8557314534}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B47A392B-8DC0-4890-8461-AACDB70C6B15} = {528F9D76-C463-4056-8705-5A16D94FE235}
+		{917E48D4-DEE4-4118-A240-692E2459F128} = {528F9D76-C463-4056-8705-5A16D94FE235}
+		{01ECDA88-7181-4EDE-A037-BCBC1BE3A697} = {528F9D76-C463-4056-8705-5A16D94FE235}
+		{65DEDCC8-A5B5-472E-A1B6-063C898E4FC3} = {528F9D76-C463-4056-8705-5A16D94FE235}
+		{7BB98641-DFF7-4D43-B937-4C8557314534} = {528F9D76-C463-4056-8705-5A16D94FE235}
+	EndGlobalSection
+EndGlobal

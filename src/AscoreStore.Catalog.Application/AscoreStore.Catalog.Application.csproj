@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AscoreStore.Catalog.Data\AscoreStore.Catalog.Data.csproj" />
+     <ProjectReference Include="..\AscoreStore.Catalog.Domain\AscoreStore.Catalog.Domain.csproj" />
+  </ItemGroup>
+</Project>
