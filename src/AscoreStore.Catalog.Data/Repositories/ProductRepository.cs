@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using AscoreStore.Catalog.Domain.Interfaces;
 using AscoreStore.Catalog.Domain.ProductAggregate;
 using AscoreStore.Core.Data;
@@ -16,9 +17,9 @@ namespace AscoreStore.Catalog.Data.Repositories
 
         public IUnitOfWork UnitOfWork => _context;
 
-        public async Task<IEnumerable<Product>> GetAllAsync()
+        public async Task<IEnumerable<Product>> GetAllAsync(Expression<Func<Product, bool>> expression)
         {
-            return await _context.Products.Include(p => p.Image).AsNoTracking().ToListAsync();
+            return await _context.Products.Where(expression).Include(p => p.Image).AsNoTracking().ToListAsync();
         }
 
         public async Task<Product> GetByIdAsync(Guid id)

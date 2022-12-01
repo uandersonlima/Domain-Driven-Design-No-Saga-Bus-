@@ -30,10 +30,10 @@
         transition: all 0.5s;
     }
 
-        .thumbnail:hover {
-            opacity: 1.00;
-            box-shadow: 0px 0px 10px #4bc6ff;
-        }
+    .thumbnail:hover {
+        opacity: 1.00;
+        box-shadow: 0px 0px 10px #4bc6ff;
+    }
 
     .line {
         margin-bottom: 5px;
@@ -65,28 +65,36 @@
     <h1>Vitrine de Produtos</h1>
     <br />
     <div class="row">
+        <div class="col-12">
+            <form>
+                <input type="text" name="filters[0].value" class="form-control" >
+                <input type="hidden" name="filters[0].property" value="name">
+                <input type="hidden" name="filters[0].filtertype" value="contains">
+                <input type="submit" class="btn btn-primary" value="Pesquisar" >
+            </form>
+        </div>
         <!-- BEGIN PRODUCTS -->
         @{
-            foreach (var product in Model.OrderBy(p=>p.CategoryId))
+            foreach (var product in Model.OrderBy(p => p.CategoryId))
             {
-            <div class="col-md-3 col-sm-6">
-                <span class="thumbnail">
-                    <a asp-controller="Showcase" asp-action="ProductDetails" asp-route-id="@product.Id"><img width="200" height="200" src="data:image/jpeg;base64,@Convert.ToBase64String(product.Image.Data)" /> /></a>
-                    <h4>@product.Name</h4>
-                    <p>Apenas @product.StockQuantity em estoque!</p>
-                    <p>@product.Description</p>
-                    <hr class="line">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <p class="price">@product.Value.ToString("C")</p>
+                <div class="col-md-3 col-sm-6">
+                    <span class="thumbnail">
+                        <a asp-controller="Showcase" asp-action="ProductDetails" asp-route-id="@product.Id"><img width="200"
+                            height="200" src="data:image/jpeg;base64,@Convert.ToBase64String(product.Image.Data)" /> /></a>
+                        <h4>@product.Name</h4>
+                        <p>Apenas @product.StockQuantity em estoque!</p>
+                        <p>@product.Description</p>
+                        <hr class="line">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <p class="price">@product.Value.ToString("C")</p>
+                            </div>
                         </div>
-                    </div>
-                </span>
-            </div>
+                    </span>
+                </div>
             }
         }
 
         <!-- END PRODUCTS -->
     </div>
 </div>
-

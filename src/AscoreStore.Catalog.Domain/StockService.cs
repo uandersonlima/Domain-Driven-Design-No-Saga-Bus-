@@ -1,3 +1,4 @@
+using AscoreStore.Catalog.Domain.Events;
 using AscoreStore.Catalog.Domain.Interfaces;
 using AscoreStore.Core.Communication.Mediator;
 
@@ -29,7 +30,7 @@ namespace AscoreStore.Catalog.Domain
             // TODO: Parametrizar a quantidade de estoque baixo
             if (product.StockQuantity < 10)
             {
-                //await _mediator.PublishEventAsync(new ProdutoAbaixoEstoqueEvent(produto.Id, produto.QuantidadeEstoque));
+                await _mediator.PublishEventAsync(new ProductBelowStockEvent(product.Id, product.StockQuantity));
             }
 
             _productRepository.Update(product);

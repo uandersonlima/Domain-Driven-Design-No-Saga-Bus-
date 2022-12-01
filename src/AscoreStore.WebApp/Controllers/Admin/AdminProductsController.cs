@@ -1,5 +1,8 @@
 using AscoreStore.Catalog.Application.Services.Interfaces;
 using AscoreStore.Catalog.Application.ViewModels;
+using AscoreStore.Catalog.Domain.ProductAggregate;
+using AscoreStore.Core.Filter;
+using AscoreStore.Core.Filter.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AscoreStore.WebApp.Controllers.Admin
@@ -7,17 +10,22 @@ namespace AscoreStore.WebApp.Controllers.Admin
     public class AdminProductsController : Controller
     {
         private readonly IProductAppService _productAppService;
+        private readonly IDynamicFilter _dynamicFilter;
 
-        public AdminProductsController(IProductAppService productAppService)
+        public AdminProductsController(IProductAppService productAppService, IDynamicFilter dynamicFilter)
         {
             _productAppService = productAppService;
+            _dynamicFilter = dynamicFilter;
         }
 
         [HttpGet]
         [Route("admin-products")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(PaginationFilter paginationFilter)
         {
-            return View(await _productAppService.GetAllAsync());
+            var expressionDynamic = paginationFilter.Filters.Count > 0 ?
+                                    _dynamicFilter.FromFilterItemList<Product>(paginationFilter.Filters)
+                                    : t => true;
+            return View(await _productAppService.GetAllAsync(expressionDynamic));
         }
 
         [Route("new-product")]
@@ -131,7 +139,7 @@ namespace AscoreStore.WebApp.Controllers.Admin
                 await _productAppService.DecreaseStockAsync(id, quantidade);
             }
 
-            return View("Index", await _productAppService.GetAllAsync());
+            return View("Index", await _productAppService.GetAllAsync(t => true));
         }
 
         private async Task<ProductViewModel> FillCategories(ProductViewModel product)

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using AscoreStore.Catalog.Application.Services.Interfaces;
 using AscoreStore.Catalog.Application.ViewModels;
 using AscoreStore.Catalog.Domain.Interfaces;
@@ -30,9 +31,9 @@ namespace AscoreStore.Catalog.Application.Services
             return _mapper.Map<ProductViewModel>(await _productRepository.GetByIdAsync(id));
         }
 
-        public async Task<IEnumerable<ProductViewModel>> GetAllAsync()
+        public async Task<IEnumerable<ProductViewModel>> GetAllAsync(Expression<Func<Product, bool>> expression)
         {
-            return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAllAsync());
+            return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAllAsync(expression));
         }
 
         public async Task<IEnumerable<CategoryViewModel>> GetCategoriesAsync()

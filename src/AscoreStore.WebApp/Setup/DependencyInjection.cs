@@ -7,7 +7,8 @@ using AscoreStore.Catalog.Domain;
 using AscoreStore.Catalog.Domain.Events;
 using AscoreStore.Catalog.Domain.Interfaces;
 using AscoreStore.Core.Communication.Mediator;
-
+using AscoreStore.Core.Filter;
+using AscoreStore.Core.Filter.Interpreters;
 
 namespace AscoreStore.WebApp.Setup
 {
@@ -15,6 +16,10 @@ namespace AscoreStore.WebApp.Setup
     {
         public static void RegisterServices(this IServiceCollection services)
         {
+            //Filter
+            services.AddSingleton<IFilterInterpreterFactory, FilterInterpreterFactory>();
+            services.AddSingleton<IDynamicFilter, DynamicFilter>();
+
             // Domain communication (Mediator)
             services.AddScoped<IMediatorHandler, MediatorHandler>();
 

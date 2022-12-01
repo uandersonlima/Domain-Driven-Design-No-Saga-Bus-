@@ -1,4 +1,6 @@
+using System.Linq.Expressions;
 using AscoreStore.Catalog.Application.ViewModels;
+using AscoreStore.Catalog.Domain.ProductAggregate;
 
 namespace AscoreStore.Catalog.Application.Services.Interfaces
 {
@@ -6,7 +8,7 @@ namespace AscoreStore.Catalog.Application.Services.Interfaces
     {
         Task<IEnumerable<ProductViewModel>> GetByCategoryAsync(int code);
         Task<ProductViewModel> GetByIdAsync(Guid id);
-        Task<IEnumerable<ProductViewModel>> GetAllAsync();
+        Task<IEnumerable<ProductViewModel>> GetAllAsync(Expression<Func<Product, bool>> expression);
         Task<IEnumerable<CategoryViewModel>> GetCategoriesAsync();
 
         Task AddProductAsync(ProductViewModel productViewModel);
