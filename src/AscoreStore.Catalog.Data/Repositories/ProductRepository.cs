@@ -2,6 +2,8 @@ using System.Linq.Expressions;
 using AscoreStore.Catalog.Domain.Interfaces;
 using AscoreStore.Catalog.Domain.ProductAggregate;
 using AscoreStore.Core.Data;
+using AscoreStore.Core.Extensions;
+using AscoreStore.Core.Pagination;
 using Microsoft.EntityFrameworkCore;
 
 namespace AscoreStore.Catalog.Data.Repositories
@@ -17,9 +19,9 @@ namespace AscoreStore.Catalog.Data.Repositories
 
         public IUnitOfWork UnitOfWork => _context;
 
-        public async Task<IEnumerable<Product>> GetAllAsync(Expression<Func<Product, bool>> expression)
+        public async Task<PaginatedList<Product>> GetAllAsync(Expression<Func<Product, bool>> expression, int? pageNumber, int? pageSize)
         {
-            return await _context.Products.Where(expression).Include(p => p.Image).AsNoTracking().ToListAsync();
+            return _context.Products.Where(expression).Include(p => p.Image).AsNoTracking().ToPaginatedList(pageNumber, pageSize);
         }
 
         public async Task<Product> GetByIdAsync(Guid id)
@@ -61,5 +63,7 @@ namespace AscoreStore.Catalog.Data.Repositories
         {
             _context?.Dispose();
         }
+
+
     }
 }

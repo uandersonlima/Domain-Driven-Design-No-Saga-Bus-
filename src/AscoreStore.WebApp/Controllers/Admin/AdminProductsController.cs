@@ -25,6 +25,7 @@ namespace AscoreStore.WebApp.Controllers.Admin
             var expressionDynamic = paginationFilter.Filters.Count > 0 ?
                                     _dynamicFilter.FromFilterItemList<Product>(paginationFilter.Filters)
                                     : t => true;
+                                    
             return View(await _productAppService.GetAllAsync(expressionDynamic));
         }
 

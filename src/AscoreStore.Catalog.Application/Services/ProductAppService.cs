@@ -33,7 +33,7 @@ namespace AscoreStore.Catalog.Application.Services
 
         public async Task<IEnumerable<ProductViewModel>> GetAllAsync(Expression<Func<Product, bool>> expression)
         {
-            return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAllAsync(expression));
+            return _mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetAllAsync(expression, null, null));
         }
 
         public async Task<IEnumerable<CategoryViewModel>> GetCategoriesAsync()

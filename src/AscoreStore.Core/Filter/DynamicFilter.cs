@@ -1,5 +1,5 @@
 using System.Linq.Expressions;
-using AscoreStore.Core.Filter.Extensions;
+using AscoreStore.Core.Extensions;
 using AscoreStore.Core.Filter.Interpreters;
 using AscoreStore.Core.Filter.Models;
 

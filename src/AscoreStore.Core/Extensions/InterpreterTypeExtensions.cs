@@ -1,6 +1,6 @@
 using AscoreStore.Core.Filter.Interpreters;
 
-namespace AscoreStore.Core.Filter.Extensions
+namespace AscoreStore.Core.Extensions
 {
     public static class InterpreterTypeExtensions
     {
