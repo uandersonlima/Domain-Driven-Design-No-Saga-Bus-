@@ -1,12 +1,34 @@
+using AscoreStore.Core.Messages;
+
 namespace AscoreStore.Core.DomainObjects
 {
     public abstract class Entity
     {
         public Guid Id { get; private set; }
 
+        private List<Event> _notifications;
+        public IReadOnlyCollection<Event> Notifications => _notifications?.AsReadOnly();
+        
+
         protected Entity()
         {
             Id = Guid.NewGuid();
+        }
+
+        public void AddEvent(Event ev)
+        {
+            _notifications = _notifications ?? new List<Event>();
+            _notifications.Add(ev);
+        }
+
+        public void RemoveEvent(Event ev)
+        {
+            _notifications?.Remove(ev);
+        }
+
+        public void ClearEvents()
+        {
+            _notifications?.Clear();
         }
 
         public override bool Equals(object obj)
@@ -44,6 +66,9 @@ namespace AscoreStore.Core.DomainObjects
             return $"{GetType().Name} [Id={Id}]";
         }
 
-
+        public virtual bool IsValid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

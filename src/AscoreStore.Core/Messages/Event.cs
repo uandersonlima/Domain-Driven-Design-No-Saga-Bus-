@@ -8,7 +8,7 @@ namespace AscoreStore.Core.Messages
 
         protected Event()
         {
-            Timestamp = DateTime.Now;
+            Timestamp = DateTime.UtcNow;
         }
     }
 }

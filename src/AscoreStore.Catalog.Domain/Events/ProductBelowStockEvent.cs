@@ -1,4 +1,4 @@
-using AscoreStore.Core.DomainObjects;
+using AscoreStore.Core.Messages.Common.DomainEvents;
 
 namespace AscoreStore.Catalog.Domain.Events
 {

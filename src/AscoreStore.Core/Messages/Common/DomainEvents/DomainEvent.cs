@@ -1,6 +1,4 @@
-using AscoreStore.Core.Messages;
-
-namespace AscoreStore.Core.DomainObjects
+namespace AscoreStore.Core.Messages.Common.DomainEvents
 {
     public class DomainEvent : Event
     {

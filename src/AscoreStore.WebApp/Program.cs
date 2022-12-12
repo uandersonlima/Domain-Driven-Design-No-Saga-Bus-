@@ -1,6 +1,6 @@
-using System.Reflection;
 using AscoreStore.Catalog.Application.AutoMapper;
 using AscoreStore.Catalog.Data;
+using AscoreStore.Sales.Data;
 using AscoreStore.WebApp.Setup;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +21,13 @@ dbContextOptions.UseMySql(mySqlConn, serverVersion)
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors());
 
-
+builder.Services.AddDbContext<SalesContext>(dbContextOptions => 
+dbContextOptions.UseMySql(mySqlConn, serverVersion)                
+                // The following three options help with debugging, but should
+                // be changed or removed for production.
+                .LogTo(Console.WriteLine, LogLevel.Information)
+                .EnableSensitiveDataLogging()
+                .EnableDetailedErrors());
 
 
 // builder.Services.AddDefaultIdentity<IdentityUser>()
