@@ -7,7 +7,7 @@ namespace AscoreStore.Core.DomainObjects
         public Guid Id { get; private set; }
 
         private List<Event> _notifications;
-        public IReadOnlyCollection<Event> Notifications => _notifications?.AsReadOnly();
+        public IReadOnlyCollection<Event> Notifications => _notifications.AsReadOnly();
         
 
         protected Entity()
@@ -31,7 +31,7 @@ namespace AscoreStore.Core.DomainObjects
             _notifications?.Clear();
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             var compareTo = obj as Entity;
 

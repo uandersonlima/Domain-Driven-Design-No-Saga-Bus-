@@ -4,7 +4,7 @@ namespace AscoreStore.Sales.Application.Commands
 {
     public class CancelOrderProcessingReverseStockCommand : Command
     {
-        public CancelOrderProcessingReverseStockCommand(Guid customerId, Guid orderId)
+        public CancelOrderProcessingReverseStockCommand(Guid orderId, Guid customerId)
         {
             CustomerId = customerId;
             OrderId = orderId;

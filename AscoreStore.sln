@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AscoreStore.Sales.Data", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AscoreStore.Sales.Domain", "src\AscoreStore.Sales.Domain\AscoreStore.Sales.Domain.csproj", "{4F989195-068E-4EFD-A977-42C4CEEA453C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AscoreStore.Payments.Data", "src\AscoreStore.Payments.Data\AscoreStore.Payments.Data.csproj", "{84A0F612-328B-4E6A-833B-226E8C071FD1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,10 @@ Global
 		{4F989195-068E-4EFD-A977-42C4CEEA453C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F989195-068E-4EFD-A977-42C4CEEA453C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F989195-068E-4EFD-A977-42C4CEEA453C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A0F612-328B-4E6A-833B-226E8C071FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A0F612-328B-4E6A-833B-226E8C071FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A0F612-328B-4E6A-833B-226E8C071FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A0F612-328B-4E6A-833B-226E8C071FD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B47A392B-8DC0-4890-8461-AACDB70C6B15} = {528F9D76-C463-4056-8705-5A16D94FE235}
@@ -95,5 +101,6 @@ Global
 		{C6C4B327-FF20-4C94-98A2-98E2E4E5F677} = {528F9D76-C463-4056-8705-5A16D94FE235}
 		{FBC1BB49-DEBE-4ACC-BDD9-3EF66B960071} = {528F9D76-C463-4056-8705-5A16D94FE235}
 		{4F989195-068E-4EFD-A977-42C4CEEA453C} = {528F9D76-C463-4056-8705-5A16D94FE235}
+		{84A0F612-328B-4E6A-833B-226E8C071FD1} = {528F9D76-C463-4056-8705-5A16D94FE235}
 	EndGlobalSection
 EndGlobal
